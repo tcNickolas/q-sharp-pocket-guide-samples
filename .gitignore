@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Jupyter Notebooks checkpoints:
+.ipynb_checkpoints
+
+# Python build files
+__pycache__
