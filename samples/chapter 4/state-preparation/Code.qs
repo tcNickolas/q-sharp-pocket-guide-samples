@@ -6,7 +6,7 @@ namespace StatePreparation {
     
     @EntryPoint()
     /// # Summary
-    /// Prepares state 
+    /// Prepares state (|00⟩ + |10⟩ + |11⟩) / √3.
     operation PrepareSuperpositionState() : Unit {
         // Use statement allocates the qubits.
         use (qs, aux) = (Qubit[2], Qubit());
