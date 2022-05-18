@@ -1,9 +1,6 @@
 namespace MutableVariablesRefactoring {
     open Microsoft.Quantum.Arrays;      // Subarray
-    open Microsoft.Quantum.Canon;       // ApplyToEach
-    open Microsoft.Quantum.Diagnostics; // DumpRegister
-    open Microsoft.Quantum.Intrinsic;   // Message
-    open Microsoft.Quantum.Measurement; // MResetZ
+    open Microsoft.Quantum.Intrinsic;   // H, X
 
 
     /// # Summary
