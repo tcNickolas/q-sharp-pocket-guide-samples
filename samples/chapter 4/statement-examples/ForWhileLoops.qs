@@ -20,7 +20,7 @@ namespace StatementsExamples {
         }
         Message($"{n}! = {fact}");
 
-        // Example 2: use a for loop to iterate over a range of integers
+        // Example 2: use a for loop to iterate over a range of integers.
         // with the loop variable omitted.
         // Calculate 2^n.
         Message("\nExample 2: Use a for loop to calculate the given power of 2.");

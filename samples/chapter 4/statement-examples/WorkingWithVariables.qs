@@ -10,7 +10,7 @@ namespace StatementsExamples {
     // Q# does not support global variables, so you cannot define a variable outside of a callable.
 
     /// # Summary
-    /// The collection of loop examples.
+    /// The collection of examples on working with variables.
     operation WorkingWithVariablesExamples() : Unit {
         Message("============================== Q# statements: working with variables ==============================");
 

@@ -8,6 +8,7 @@ namespace StatementsExamples {
     /// Uncomment the lines calling the examples you want to run.
     operation RunAllExamples() : Unit {
         // WorkingWithVariablesExamples();
+        // ConditionalStatementExamples();
         // ForWhileLoopsExamples();
     }
 }
