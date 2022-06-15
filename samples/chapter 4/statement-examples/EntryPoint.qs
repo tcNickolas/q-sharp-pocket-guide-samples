@@ -1,6 +1,4 @@
 namespace StatementsExamples {
-    open Microsoft.Quantum.Random;
-    open Microsoft.Quantum.Intrinsic;
     
     @EntryPoint()
     /// # Summary

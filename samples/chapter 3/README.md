@@ -1,7 +1,7 @@
 # Chapter 3. Expressions
 
-* Equality operators
-* Comparison operators
+* [Equality operators](./Equality.qs)
+* [Comparison operators](./Comparison.qs)
 * Logical operators
 * Bitwise operators
 * Arithmetic operators
