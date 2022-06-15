@@ -10,5 +10,9 @@ namespace StatementsExamples {
         // WorkingWithVariablesExamples();
         // ConditionalStatementExamples();
         // ForWhileLoopsExamples();
+        // CallReturnFailExamples();
+        // QubitAllocationExamples();
+        // RepeatUntilExamples();
+        // ConjugationExamples();
     }
 }
