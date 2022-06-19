@@ -7,5 +7,13 @@ namespace ExpressionsExamples {
     operation RunAllExamples() : Unit {
         // EqualityExamples();
         // ComparisonExamples();
+        // LogicalExamples();
+        // BitwiseExamples();
+        // ArithmeticExamples();
+        // ConditionalExamples();
+        // ArrayExamples();
+        // RangeExamples();
+        // UDTExamples();
+        // CallExamples();
     }
 }
