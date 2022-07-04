@@ -7,5 +7,6 @@ namespace LibraryExamples {
     operation RunAllExamples() : Unit {
         // ConvertExamples();
         // LogicalExamples();
+        // BitwiseExamples();
     }
 }
