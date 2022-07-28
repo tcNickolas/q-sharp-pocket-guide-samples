@@ -8,5 +8,7 @@ namespace LibraryExamples {
         // ConvertExamples();
         // LogicalExamples();
         // BitwiseExamples();
+        // MathExamples();
+        // RandomExamples();
     }
 }

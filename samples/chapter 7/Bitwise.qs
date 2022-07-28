@@ -1,7 +1,6 @@
 ﻿namespace LibraryExamples {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Bitwise;
-    open Microsoft.Quantum.Random;
 
     /// # Summary
     /// The collection of usage examples of Microsoft.Quantum.Bitwise library.
