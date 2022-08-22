@@ -10,5 +10,6 @@ namespace LibraryExamples {
         // BitwiseExamples();
         // MathExamples();
         // RandomExamples();
+        // ArraysExamples();
     }
 }

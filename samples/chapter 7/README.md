@@ -5,3 +5,4 @@
 * [Microsoft.Quantum.Bitwise](./Bitwise.qs)
 * [Microsoft.Quantum.Math](./Math.qs)
 * [Microsoft.Quantum.Random](./Random.qs)
+* [Microsoft.Quantum.Arrays](./Arrays.qs)
