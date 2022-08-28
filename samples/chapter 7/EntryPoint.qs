@@ -11,5 +11,10 @@ namespace LibraryExamples {
         // MathExamples();
         // RandomExamples();
         // ArraysExamples();
+        // IntrinsicExamples();
+        // DiagnosticsExamples();
+        // MeasurementExamples();
+        // PreparationExamples();
+        // CanonExamples();
     }
 }
