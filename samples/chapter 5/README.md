@@ -7,4 +7,4 @@
     * [Functional elements of Q#](./callable-examples/FunctionalElements.qs)
     * [Type-parameterized callables](./callable-examples/TypeParameterized.qs)
 * [Refactoring operation code to extract updating mutable variables into a separate function to make the operation adjointable automatically](./mutable-variables-refactoring)
-* Manually defining the adjoint speciazliation of an operation that is not adjointable automatically
+* [Manually defining the adjoint speciazliation of an operation that is not adjointable automatically](./manual-adjoint-unitary)
