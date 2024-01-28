@@ -1,7 +1,6 @@
 ﻿namespace CallableExamples {
     open Microsoft.Quantum.Arrays;
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Math;
 
     // Defining Q# functions.
@@ -50,6 +49,7 @@
 
     /// # Summary
     /// The collection of examples of defining and calling operations and functions.
+    @EntryPoint()
     operation BasicsExamples() : Unit {
         Message("============================== Q# callables: the basics ==============================");
 

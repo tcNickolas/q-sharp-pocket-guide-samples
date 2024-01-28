@@ -1,8 +1,7 @@
 ﻿namespace ExpressionsExamples {
-    open Microsoft.Quantum.Intrinsic;
-
     /// # Summary
     /// The collection of examples of comparison expressions.
+    @EntryPoint()
     operation ComparisonExamples() : Unit {
         Message("============================== Q# expressions: comparison ==============================");
 

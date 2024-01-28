@@ -1,7 +1,5 @@
 namespace MutableVariablesRefactoring {
     open Microsoft.Quantum.Arrays;      // Subarray
-    open Microsoft.Quantum.Intrinsic;   // H, X
-
 
     /// # Summary
     /// Applies a unitary operation on the target parameter 

@@ -1,8 +1,5 @@
 namespace StatementsExamples {
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
 
     // Define a type used in the copy-and-update expression example.
     newtype NamedPair = (Fst : Int, Snd : Bool);
@@ -11,6 +8,7 @@ namespace StatementsExamples {
 
     /// # Summary
     /// The collection of examples on working with variables.
+    @EntryPoint()
     operation WorkingWithVariablesExamples() : Unit {
         Message("============================== Q# statements: working with variables ==============================");
 
@@ -58,6 +56,6 @@ namespace StatementsExamples {
         Message(greeting);
         Message($"m = {m}");
         Message($"intArray = {intArray}");
-        Message($"np = {np}");
+        Message($"np = {np!}");
     }
 }

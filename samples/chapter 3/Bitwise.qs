@@ -1,8 +1,7 @@
 ﻿namespace ExpressionsExamples {
-    open Microsoft.Quantum.Intrinsic;
-
     /// # Summary
     /// The collection of examples of bitwise expressions.
+    @EntryPoint()
     operation BitwiseExamples() : Unit {
         Message("============================== Q# expressions: bitwise expressions ==============================");
 

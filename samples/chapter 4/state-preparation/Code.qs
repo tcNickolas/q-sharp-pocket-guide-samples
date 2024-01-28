@@ -1,17 +1,16 @@
 namespace StatePreparation {
-    open Microsoft.Quantum.Canon;       // ApplyToEach
     open Microsoft.Quantum.Diagnostics; // DumpRegister
-    open Microsoft.Quantum.Intrinsic;   // Message
     open Microsoft.Quantum.Measurement; // MResetZ
     
-    @EntryPoint()
     /// # Summary
     /// Prepares state (|00⟩ + |10⟩ + |11⟩) / √3.
+    @EntryPoint()
     operation PrepareSuperpositionState() : Unit {
         // Use statement allocates the qubits.
         use (qs, aux) = (Qubit[2], Qubit());
         // Repeat-until loop runs until the loop body 
         // succeeds at preparing the right state.
+        mutable res = Zero;
         repeat {
             // Call statement applies H gates to qubits
             // to prep (|00⟩ + |01⟩ + |10⟩ + |11⟩) / 2.
@@ -30,14 +29,14 @@ namespace StatePreparation {
             }
             // Variable assignment statement measures
             // qubit aux and stores the result.
-            let res = MResetZ(aux);
+            set res = MResetZ(aux);
         } until res == Zero
         fixup {
             // Call statement resets qubits to |0⟩.
             ResetAll(qs);
         }
         // Call statement prints the qubits state.
-        DumpRegister((), qs);
+        DumpMachine();
         // Call statement resets qubits to |0⟩.
         ResetAll(qs);
     }

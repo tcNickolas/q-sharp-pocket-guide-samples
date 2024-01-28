@@ -23,6 +23,7 @@ namespace C {
     open A;
     open B;
 
+    @EntryPoint()
     operation CallF() : Unit {
         // Neither A.F nor B.F have precedence, so using unqualified name for F
         // would produce an error asking for a fully qualified name.

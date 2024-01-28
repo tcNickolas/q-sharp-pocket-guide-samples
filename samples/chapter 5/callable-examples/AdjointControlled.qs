@@ -1,7 +1,6 @@
 ﻿namespace CallableExamples {
     open Microsoft.Quantum.Arrays;
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
 
     // Add "is Adj + Ctl" suffix to generate specializations automatically.
     operation ApplyRyArrayCA(
@@ -44,13 +43,14 @@
 
     /// # Summary
     /// The collection of examples of working with adjoint and controlled specializations.
+    @EntryPoint()
     operation AdjointControlledExamples() : Unit {
         Message("============================== Q# callables: adjoint and controlled ==============================");
 
         // Example 1: Calling adjoint specialization.
         Message("\nExample 1: Calling adjoint specialization.");
         use qs = Qubit[2] {
-            let angles = [.2, .4];
+            let angles = [0.2, 0.4];
             Adjoint ApplyRyArrayCA(qs, angles);
             DumpMachine();
             ResetAll(qs);
@@ -60,7 +60,7 @@
         Message("\nExample 1: Calling controlled specialization.");
         use (cs, qs) = (Qubit[1], Qubit[2]) {
             H(cs[0]);
-            let angles = [.2, .4];
+            let angles = [0.2, 0.4];
             Controlled ApplyRyArrayCAManual(cs, (qs, angles));
             DumpMachine();
             ResetAll(cs + qs);

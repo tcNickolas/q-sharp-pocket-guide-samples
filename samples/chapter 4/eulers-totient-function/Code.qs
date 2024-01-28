@@ -1,6 +1,4 @@
-namespace EulersTotientFunction {
-    open Microsoft.Quantum.Intrinsic; // Message
-    
+namespace EulersTotientFunction {    
     /// # Summary
     /// Calculates Euler's totient function.
     function TotientFunction(n : Int) : Int {

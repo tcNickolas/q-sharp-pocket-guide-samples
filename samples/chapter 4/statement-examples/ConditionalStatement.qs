@@ -1,12 +1,7 @@
 namespace StatementsExamples {
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
-
-
     /// # Summary
     /// The collection of conditional statement examples.
+    @EntryPoint()
     operation ConditionalStatementExamples() : Unit {
         Message("============================== Q# statements: conditional statement ==============================");
 

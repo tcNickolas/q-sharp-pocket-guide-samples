@@ -1,11 +1,10 @@
 ﻿namespace ExpressionsExamples {
-    open Microsoft.Quantum.Intrinsic;
-
     newtype AnonymousPair = (Int, Bool);
     newtype NamedPair = (First : Int, Second : Bool);
 
     /// # Summary
     /// The collection of examples of user-defined type expressions.
+    @EntryPoint()
     operation UDTExamples() : Unit {
         Message("============================== Q# expressions: user-defined type expressions ==============================");
 
@@ -13,8 +12,8 @@
         Message("\nExample 1: UDT constructor expressions.");
         let ap = AnonymousPair(1, false);
         let np = NamedPair(2, true);
-        Message($"UDT with anonymous items = {ap}");
-        Message($"UDT with named items = {np}");
+        Message($"UDT with anonymous items = {ap!}");
+        Message($"UDT with named items = {np!}");
 
         // Example 2: named items access operator.
         Message("\nExample 2: Accessing named UDT items.");
@@ -32,6 +31,6 @@
         let updFirst = np w/ First <- 3;
         let updBoth = np w/ First <- 4 
                          w/ Second <- false;
-        Message($"Updated UDT = {updBoth}");
+        Message($"Updated UDT = {updBoth!}");
     }
 }

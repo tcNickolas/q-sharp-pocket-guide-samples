@@ -1,8 +1,7 @@
 ﻿namespace ExpressionsExamples {
-    open Microsoft.Quantum.Intrinsic;
-
     /// # Summary
     /// The collection of examples of arithmetic expressions.
+    @EntryPoint()
     operation ArithmeticExamples() : Unit {
         Message("============================== Q# expressions: arithmetic expressions ==============================");
 

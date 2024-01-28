@@ -1,15 +1,13 @@
 ﻿namespace ExpressionsExamples {
-    open Microsoft.Quantum.Intrinsic;
-
     /// # Summary
     /// The collection of examples of array expressions.
+    @EntryPoint()
     operation ArrayExamples() : Unit {
         Message("============================== Q# expressions: array ==============================");
 
         // Example 1: creating arrays using a variety of array literals.
         Message("\nExample 1: Array literals.");
         // let initiallyEmptyArray = [];
-        let zeroArray = new Int[5];         // Deprecated syntax yields a warning.
         let oneArray = [1, size = 3];
         let arr = [1, 2, 3, 4];
         Message($"Array {arr}");

@@ -1,8 +1,7 @@
 ﻿namespace ExpressionsExamples {
-    open Microsoft.Quantum.Intrinsic;
-
     /// # Summary
     /// The collection of examples of logical expressions.
+    @EntryPoint()
     operation LogicalExamples() : Unit {
         Message("============================== Q# expressions: logical expressions ==============================");
 

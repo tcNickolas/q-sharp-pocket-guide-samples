@@ -1,13 +1,14 @@
 import qsharp
-from BiasedCoins import FlipBiasedCoinN
+
+qsharp.init(project_root="./")
 
 # Define the number of bits to generate.
-nBits = 10
+n_bits = 10
 # Define the probability to generate true.
-pTrue = 0.3
+p_true = 0.3
 
 # Run the quantum code and get the results.
-generatedBits = FlipBiasedCoinN.simulate(n=nBits, pTrue=pTrue)
+generatedBits = qsharp.eval(f"BiasedCoins.FlipBiasedCoinN({n_bits}, {p_true})")
 
 # Print the results.
 print(generatedBits)

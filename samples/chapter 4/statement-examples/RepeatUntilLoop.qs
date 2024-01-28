@@ -1,13 +1,10 @@
 ﻿namespace StatementsExamples {
-    open Microsoft.Quantum.Arithmetic;
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Measurement;
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
-
 
     /// # Summary
     /// The collection of quantum conditional loop examples.
+    @EntryPoint()
     operation RepeatUntilExamples() : Unit {
         Message("============================== Q# statements: quantum conditional loop ==============================");
 
@@ -16,9 +13,10 @@
         use q = Qubit();
         Message("Qubit state before the loop");
         DumpMachine();
+        mutable res = Zero;
         repeat {
             H(q);
-            let res = M(q);
+            set res = MResetZ(q);
         } until res == One;
         Message("Qubit state after the loop");
         DumpMachine();

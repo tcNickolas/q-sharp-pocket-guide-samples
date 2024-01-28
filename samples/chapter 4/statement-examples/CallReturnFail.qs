@@ -1,12 +1,7 @@
 ﻿namespace StatementsExamples {
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
-
-
     /// # Summary
     /// The collection of examples for call statements, return and fail.
+    @EntryPoint()
     operation CallReturnFailExamples() : Unit {
         Message("============================== Q# statements: call statements, return and fail ==============================");
 
@@ -15,7 +10,7 @@
         // Calling an operation.
         PrepareBasisState(q, Zero);
         // Calling a function.
-        Message("\nExample: Use a call statement to invoke a callable with Unit return type.");
+        Message("\nExample: Use a call statement to invoke a callable Message with Unit return type.");
 
         // Calling a callable that returns a non-Unit type is a call expression.
         Message($"{Factorial(3)}");

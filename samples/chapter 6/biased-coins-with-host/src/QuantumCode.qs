@@ -1,8 +1,7 @@
 namespace BiasedCoins {
     open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Math;
-    
+    open Microsoft.Quantum.Measurement;
 
     /// # Summary
     /// Generates a single random bit that represents an outcome of a biased coin flip.
@@ -12,7 +11,7 @@ namespace BiasedCoins {
     operation FlipBiasedCoinOnce(pTrue : Double) : Bool {
         use q = Qubit();
         Ry(2.0 * ArcSin(Sqrt(pTrue)), q);
-        return M(q) == One;
+        return MResetZ(q) == One;
     }
 
 

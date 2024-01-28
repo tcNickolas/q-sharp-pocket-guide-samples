@@ -1,10 +1,10 @@
 ﻿namespace CallableExamples {
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Measurement;
 
     /// # Summary
     /// The collection of examples of representing gates and measurements in Q#.
+    @EntryPoint()
     operation GatesMeasurementsExamples() : Unit {
         Message("============================== Q# callables: quantum gates and measurements ==============================");
 
@@ -47,7 +47,7 @@
         use qs = Qubit[2] {
             H(qs[0]);
             CNOT(qs[0], qs[1]);
-            let ms = MultiM(qs);
+            let ms = MeasureEachZ(qs);
             // Yields [Zero, Zero] with probability 50%
             // and [One, One] with probability 50%.
             Message($"{ms}");

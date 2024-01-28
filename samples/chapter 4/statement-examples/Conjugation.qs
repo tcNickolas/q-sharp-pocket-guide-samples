@@ -1,13 +1,7 @@
 namespace StatementsExamples {
-    open Microsoft.Quantum.Arithmetic;
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
-
-
     /// # Summary
     /// The collection of conjugation examples.
+    @EntryPoint()
     operation ConjugationExamples() : Unit {
         Message("============================== Q# statements: conjugation ==============================");
 
@@ -28,6 +22,6 @@ namespace StatementsExamples {
         }
 
         // Method 3: use the library operation.
-        ControlledOnInt(2 ^ n - 1, X)(qs, aux);
+        ApplyControlledOnInt(2 ^ n - 1, X, qs, aux);
     }
 }

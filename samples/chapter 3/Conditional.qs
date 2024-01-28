@@ -1,9 +1,8 @@
 ﻿namespace ExpressionsExamples {
-    open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Random;
-
     /// # Summary
     /// The collection of examples of conditional expressions.
+    @EntryPoint()
     operation ConditionalExamples() : Unit {
         Message("============================== Q# expressions: conditional ==============================");
 
@@ -12,7 +11,7 @@
         // Example 1: Generate a random Boolean value with 50% chance of being true and 50% - false
         // and define another variable based on it.
         Message("\nExample 1: Define one variable based on the value of the other.");
-        let a = DrawRandomBool(0.5);
+        let a = DrawRandomInt(0, 1) == 0;
         let b = a ? 1 | DrawRandomInt(2, 4);
         Message($"a = {a}, b = {b}");
 

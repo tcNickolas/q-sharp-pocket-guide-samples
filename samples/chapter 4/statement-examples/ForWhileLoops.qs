@@ -1,12 +1,10 @@
 namespace StatementsExamples {
     open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
-
 
     /// # Summary
     /// The collection of loop examples.
+    @EntryPoint()
     operation ForWhileLoopsExamples() : Unit {
         Message("============================== Q# statements: for and while loops ==============================");
 
@@ -49,8 +47,8 @@ namespace StatementsExamples {
         use qs = Qubit[3] {
             let gates = [Rx, Ry, Rz];
             let angles = [1., 2., 3.];
-            let array = Zipped3(gates, angles, qs);
-            for (gate, angle, qubit) in array {
+            let array = Zipped(Zipped(gates, angles), qs);
+            for ((gate, angle), qubit) in array {
                 H(qubit);
                 gate(angle, qubit);
             }
@@ -66,11 +64,11 @@ namespace StatementsExamples {
         use qs = Qubit[3] {
             let gates = [Rx, Ry, Rz];
             let angles = [1., 2., 3.];
-            let array = Zipped3(gates, angles, qs);
-            for (_, _, qubit) in array {
+            let array = Zipped(Zipped(gates, angles), qs);
+            for (_, qubit) in array {
                 H(qubit);
             }
-            for (gate, angle, qubit) in array {
+            for ((gate, angle), qubit) in array {
                 gate(angle, qubit);
             }
             // Print the state of the system after the gates application.

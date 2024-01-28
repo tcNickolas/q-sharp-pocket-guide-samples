@@ -1,11 +1,27 @@
 ﻿namespace CallableExamples {
     open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
+
+    function Sum(a : Int, b : Int) : Int {
+        return a + b;
+    }
+
+    function Product(a : Int, b : Int) : Int {
+        return a * b;
+    }
+
+    operation ApplyRyArray(
+        qs : Qubit[],
+        angles : Double[]
+    ) : Unit {
+        for (q, angle) in Zipped(qs, angles) {
+            Ry(angle, q);
+        }
+    }
 
     /// # Summary
     /// The collection of examples of using the functional elements of Q#.
+    @EntryPoint()
     operation FunctionalElementsExamples() : Unit {
         Message("============================== Q# callables: functional elements of Q# ==============================");
 
@@ -13,7 +29,7 @@
         Message("\nExample 1: Callable-typed variables.");
         use qs = Qubit[2] {
             let statePrep = ApplyRyArray;
-            let angles = [.2, .4];
+            let angles = [0.2, 0.4];
             statePrep(qs, angles);
             DumpMachine();
             ResetAll(qs);
