@@ -1,6 +1,9 @@
 # Q# Pocket Guide Samples
 Code samples for the book ["Q# Pocket Guide"](https://www.oreilly.com/library/view/q-pocket-guide/9781098108854/) by Mariia Mykhailova.
 
+*The code in the main branch of this repository matches the book text, which uses QDK 0.24 (March 2022).  
+You can find the code updated to Modern QDK (February 2024) in the branch [qdk1.0](https://github.com/tcNickolas/q-sharp-pocket-guide-samples/tree/qdk1.0).*
+
 ## Part I. Q# Programming Language
 
 ### [Chapter 1. Program Structure](./samples/chapter%201)
