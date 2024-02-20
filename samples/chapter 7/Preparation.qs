@@ -1,43 +1,35 @@
 ﻿namespace LibraryExamples {
-    open Microsoft.Quantum.Arithmetic;
     open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Preparation;
+    open Microsoft.Quantum.Unstable.StatePreparation;
 
     /// # Summary
-    /// The collection of usage examples of Microsoft.Quantum.Preparation library.
+    /// The collection of usage examples of Microsoft.Quantum.Unstable.StatePreparation library.
+    @EntryPoint()
     operation PreparationExamples() : Unit {
-        Message("============================== Q# libraries: Microsoft.Quantum.Preparation ==============================");
+        Message("============================== Q# libraries: Microsoft.Quantum.Unstable.StatePreparation ==============================");
 
-        // Operations of the Microsoft.Quantum.Preparation library offer a variety of state preparation routines.
+        // Operations of the Microsoft.Quantum.Unstable.StatePreparation library offer a variety of state preparation routines.
 
-        // Example 1: Preparing uniform superpositions.
-        Message("\nExample 1: Preparing uniform superpositions.");
-        use qs = Qubit[3] {
-            PrepareUniformSuperposition(5, LittleEndian(qs));
-            DumpMachine();
-            ResetAll(qs);
-        }
-
-        // Example 2: Preparing arbitrary states with real non-negative amplitudes.
-        Message("\nExample 2: Preparing arbitrary states with real non-negative amplitudes.");
-        use qs = Qubit[2] {
-            PrepareArbitraryStateD([1.0, 2.0, 0.0, 2.0], LittleEndian(qs));
+        // Example 1: Preparing arbitrary states with real non-negative amplitudes.
+        Message("\nExample 1: Preparing arbitrary states with real non-negative amplitudes.");
+        {
+            use qs = Qubit[2];
+            PreparePureStateD([1.0, 2.0, 0.0, 2.0], qs);
             DumpMachine();
             ResetAll(qs);
         }
 
         // Example 3: Preparing arbitrary states with complex amplitudes.
         Message("\nExample 3: Preparing arbitrary states with complex amplitudes.");
-        use qs = Qubit[2] {
-            PrepareArbitraryStateCP([
+        {
+            use qs = Qubit[2];
+            ApproximatelyPreparePureStateCP(0.000001, [
                     ComplexPolar(1., 0.),
                     ComplexPolar(0., 0.),
                     ComplexPolar(2., PI()/2.0),
                     ComplexPolar(-2., 0.)
-                ],
-                LittleEndian(qs));
+                ], qs);
             DumpMachine();
             ResetAll(qs);
         }

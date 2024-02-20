@@ -11,13 +11,12 @@
     /// # Summary
     /// A classical test that checks whether the function Squared 
     /// evaluates the classical function correctly.
-    @Test("QuantumSimulator")
     function TestSquared() : Unit {
         for i in -10 .. 10 {
             let expected = i * i;
             let actual = Squared(i);
             if actual != expected {
-                fail "Incorrect return for input {i}: expected {expected}, got {actual}";
+                fail $"Incorrect return for input {i}: expected {expected}, got {actual}";
             }
         }
     }

@@ -1,9 +1,10 @@
 ﻿namespace LibraryExamples {
-    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Convert;
     open Microsoft.Quantum.Math;
 
     /// # Summary
     /// The collection of usage examples of Microsoft.Quantum.Math library.
+    @EntryPoint()
     operation MathExamples() : Unit {
         Message("============================== Q# libraries: Microsoft.Quantum.Math ==============================");
 
@@ -11,12 +12,6 @@
 
         // Example 1: Functions implementing arithmetic operators.
         Message("\nExample 1: Functions implementing arithmetic operators.");
-        Message($"intAddition = {PlusI(42, 13)}");
-        Message($"bigIntSubtraction = {MinusL(42L, 13L)}");
-        Message($"doubleMultiplication = {TimesD(42., 13.)}");
-        Message($"intDivision = {DividedByI(42, 13)}");
-        Message($"bigIntNegation = {NegationL(42L)}");
-        Message($"doubleExponentiation = {PowD(42., 13.)}");
         Message($"intModulus = {ModulusI(42, 13)}");
 
         
@@ -37,7 +32,7 @@
         Message($"Floor = {Floor(42.13)}");
         Message($"Ceiling = {Ceiling(42.13)}");
         Message($"Truncate = {Truncate(-42.13)}");
-        Message($"Exponent = {ExpD(2.0)}");
+        Message($"Exponent = {E()^2.0}");
         Message($"Logarithm = {Log(2.0)}");
         Message($"Square root = {Sqrt(2.0)}");
 
@@ -56,13 +51,13 @@
         Message("\nExample 5: Complex numbers.");
         let c = Complex(0.0, 1.0);
         let cp = ComplexPolar(1.0, PI() / 4.0);
-        Message($"Complex number = {c}");
-        Message($"Complex polar number = {cp}");
-        Message($"Convert complex to complex polar = {ComplexAsComplexPolar(c)}");
-        Message($"Convert complex polar to complex = {ComplexPolarAsComplex(cp)}");
+        Message($"Complex number = {c!}");
+        Message($"Complex polar number = {cp!}");
+        Message($"Convert complex to complex polar = {ComplexAsComplexPolar(c)!}");
+        Message($"Convert complex polar to complex = {ComplexPolarAsComplex(cp)!}");
         Message($"Absolute value / polar = {AbsComplex(c)} / {AbsComplexPolar(cp)}");
         Message($"Argument / polar = {ArgComplex(c)} / {ArgComplexPolar(cp)}");
-        Message($"Sum = {PlusC(c, ComplexPolarAsComplex(cp))}");
-        Message($"Product = {PlusCP(ComplexAsComplexPolar(c), cp)}");
+        Message($"Sum = {PlusC(c, ComplexPolarAsComplex(cp))!}");
+        Message($"Product = {PlusCP(ComplexAsComplexPolar(c), cp)!}");
     }
 }

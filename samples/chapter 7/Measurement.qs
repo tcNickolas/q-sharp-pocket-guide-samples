@@ -1,9 +1,9 @@
 ﻿namespace LibraryExamples {
-    open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Measurement;
 
     /// # Summary
     /// The collection of usage examples of Microsoft.Quantum.Measurement library.
+    @EntryPoint()
     operation MeasurementExamples() : Unit {
         Message("============================== Q# libraries: Microsoft.Quantum.Measurement ==============================");
 
@@ -11,7 +11,8 @@
 
         // Example 1: Single-qubit measurements in Pauli bases.
         Message("\nExample 1: Single-qubit measurements in Pauli bases.");
-        use q = Qubit() {
+        {
+            use q = Qubit();
             H(q);
             Message($"{MResetX(q)}");
             // The qubit is returned to the |0⟩ state.
@@ -22,7 +23,8 @@
 
         // Example 2: Parity measurement.
         Message("\nExample 2: Parity measurement.");
-        use qs = Qubit[2] {
+        {
+            use qs = Qubit[2];
             H(qs[0]);
             CNOT(qs[0], qs[1]);
             let parity = MeasureAllZ(qs);
@@ -34,10 +36,11 @@
 
         // Example 3: Measuring each qubit in the array.
         Message("\nExample 3: Measuring each qubit in the array.");
-        use qs = Qubit[2] {
+        {
+            use qs = Qubit[2];
             H(qs[0]);
             CNOT(qs[0], qs[1]);
-            let ms = MultiM(qs);
+            let ms = MeasureEachZ(qs);
             // Yields [Zero, Zero] with probability 50%
             // and [One, One] with probability 50%.
             Message($"{ms}");

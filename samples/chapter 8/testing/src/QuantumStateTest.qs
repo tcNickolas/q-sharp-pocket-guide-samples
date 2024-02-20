@@ -1,40 +1,43 @@
 ﻿namespace TestExamples {
-    open Microsoft.Quantum.Arithmetic;
     open Microsoft.Quantum.Diagnostics;
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Preparation;
-
-    /// # Summary
-    /// A test that checks whether the Ry gate
-    /// prepares the expected quantum state.
-    @Test("QuantumSimulator")
-    operation TestSingleQubitState() : Unit {
-        use q = Qubit();
-        Ry(2.0 * ArcTan2(0.6, 0.8), q);
-        AssertQubitIsInStateWithinTolerance((Complex(.8, .0), Complex(.6, .0)), q, 1E-9);
-        Reset(q);
-    }
-
+    open Microsoft.Quantum.Unstable.StatePreparation;
 
     /// # Summary
     /// A helper operation that checks whether the given qubits are in the given state.
     operation AssertQubitsAreInState(
         coefficients : ComplexPolar[],
         qubits : Qubit[]
-    ) : Unit is Adj + Ctl {
+    ) : Unit {
         within {
-            Adjoint PrepareArbitraryStateCP(coefficients, LittleEndian(qubits));
+            Adjoint ApproximatelyPreparePureStateCP(0.000001, coefficients, qubits);
         } apply {
-            AssertAllZero(qubits);
+            if not CheckAllZero(qubits) {
+                fail "Qubits in unexpected state";
+            }
         }
+    }
+
+
+    /// # Summary
+    /// A test that checks whether the Ry gate
+    /// prepares the expected quantum state.
+    operation TestSingleQubitState() : Unit {
+        use q = Qubit();
+        Ry(2.0 * ArcTan2(0.6, 0.8), q);
+        AssertQubitsAreInState(
+            [
+                ComplexPolar(0.8, 0.), 
+                ComplexPolar(0.6, 0.)
+            ], [q]);
+        Reset(q);
     }
 
 
     /// # Summary
     /// A test that checks whether the pair of Ry gates
     /// prepares the expected quantum state.
-    @Test("QuantumSimulator")
     operation TestMultiQubitState() : Unit {
         use qs = Qubit[2];
         for q in qs {
